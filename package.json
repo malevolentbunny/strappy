@@ -1,8 +1,10 @@
 {
   "name": "strappy",
   "version": "0.0.1",
-  "dependencies": {
-    "bootstrap" : "latest",
-    "grunt-cli" : "latest"
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }

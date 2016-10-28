@@ -23,6 +23,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "node_modules/bootstrap/less/bootstrap";
 
 /* Begin Custom After Bootstrap Code*/
+/* Add in WordPress Accessibility CSS*/
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
@@ -39,19 +40,50 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     display: none;
   }
 }
-.menu-some-menu-container {
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: @link-color;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0; }
+
+
+/*Navigation */
+
+.main-navigation {
   &:extend(.navbar);
   &:extend(.navbar-default);
 }
 .menu {
   &:extend(.nav);
   &:extend(.navbar-nav);
+  &:extend(.nav-pills);
+}
+.menu-item {
+  display: inline-block;
+  padding-right: 5px;
 }
 .site-title a {
   &:extend(h1);
   color: @link-color;
 }
-
 .sticky {
   &:extend(.panel);
   &:extend(.panel-warning);

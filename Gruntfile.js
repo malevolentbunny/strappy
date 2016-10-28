@@ -12,6 +12,7 @@ module.exports = function(grunt) {
                 options: {
                     paths: ["/"],
                 },
+                compress: true,
                 files: {
                     "style.css": "style.less"
                 }

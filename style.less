@@ -71,6 +71,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   &:extend(.navbar);
   &:extend(.navbar-default);
 }
+.menu-some-menu-container{
+  &:extend(.container-fluid);
+}
 .menu {
   &:extend(.nav);
   &:extend(.navbar-nav);
@@ -79,6 +82,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .menu-item {
   display: inline-block;
   padding-right: 5px;
+  vertical-align: middle;
 }
 .site-title a {
   &:extend(h1);
@@ -90,4 +94,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   .entry-title {
     &:extend(.panel-heading);
   }
+}
+.site-description {
+  &:extend(h5);
 }

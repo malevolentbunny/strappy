@@ -1,4 +1,4 @@
-/*
+/*!
 Theme Name: Strappy
 Theme URI: https://github.com/malevolentbunny/strappy
 Author: Miss Geek Bunny
@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: strappy
-Tags:
+Tags: two-columns
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -21,7 +21,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 //Imports
 @import "node_modules/bootstrap/less/bootstrap";
-
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('fonts/@{icon-font-name}.eot');
+  src: url('fonts/@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+  url('fonts/@{icon-font-name}.woff2') format('woff2'),
+  url('fonts/@{icon-font-name}.woff') format('woff'),
+  url('fonts/@{icon-font-name}.ttf') format('truetype'),
+  url('fonts@{icon-font-name}.svg#@{icon-font-svg-id}') format('svg');
+}
 /* Begin Custom After Bootstrap Code*/
 /* Add in WordPress Accessibility CSS*/
 .screen-reader-text {
@@ -78,7 +86,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     font-weight: bold;
   }
 }
-img {
+img, figure {
   height: auto;
   /* Make sure images are scaled correctly. */
   max-width: 100%;
@@ -86,20 +94,43 @@ img {
 .entry-footer span{
   padding-right: 7.5px;
 }
+figure {
+  &:extend(.well);
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+}
 table{
   &:extend(.table);
+  &:extend(.table-bordered);
+  &:extend(.table-hover);
 }
-.secondary ul li {
-  list-style: none;
+.widget {
+  &:extend(.well);
+  ul li {
+    list-style: none;
+  }
 }
 .nav-previous, .nav-next {
 
-  &:extend(.btn);
-  &:extend(.btn-default);
+    &:extend(.btn);
+    &:extend(.btn-default);
+  }
+.nav-next {
+    float: right;
 }
-.nav-previous a {
- &:before {
-   font-family: 'Glyphicons Halflings';
-   content: "\e091";
+.site-footer {
+  margin-top: 15px;
 }
+.wp-caption, .wp-caption-text, .bypostauthor, .gallery-caption{
+  &:extend(p);
+}
+.alignleft{
+  &:extend(.pull-left);
+}
+.alignright{
+  &:extend(.pull-right);
+}
+.aligncenter{
+  &:extend(.center-block);
 }

@@ -40,7 +40,10 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_navigation(
+				array(
+				'prev_text' => "<span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span> Older Posts",
+				'next_text' => 'Newer Posts <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>'));
 
 		else :
 

@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer well well-lg" role="contentinfo">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'strappy' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'strappy' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>

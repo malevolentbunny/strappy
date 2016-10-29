@@ -23,7 +23,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'strappy' ); ?></a>
 
-	<header id="masthead" class="site-header navbar" role="banner">
+	<header id="masthead" class="site-header navbar navbar-default" role="banner">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

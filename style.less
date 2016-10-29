@@ -25,11 +25,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /* Begin Custom After Bootstrap Code*/
 /* Add in WordPress Accessibility CSS*/
 .screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+  &:extend(.sr-only);
 }
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -70,10 +66,40 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   color: @link-color;
 }
 .sticky {
-  &:extend(.panel);
-  &:extend(.panel-warning);
-  .entry-title {
-    &:extend(.panel-heading);
+  &:extend(.panel-primary);
+  .panel-heading a {
+    color: white;
   }
 }
+.panel-primary .panel-heading .entry-meta a {
+  color: white;
+  text-decoration: underline;
+  &:hover, &:focus {
+    font-weight: bold;
+  }
+}
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+.entry-footer span{
+  padding-right: 7.5px;
+}
+table{
+  &:extend(.table);
+}
+.secondary ul li {
+  list-style: none;
+}
+.nav-previous, .nav-next {
 
+  &:extend(.btn);
+  &:extend(.btn-default);
+}
+.nav-previous a {
+ &:before {
+   font-family: 'Glyphicons Halflings';
+   content: "\e091";
+}
+}

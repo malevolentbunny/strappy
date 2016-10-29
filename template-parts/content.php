@@ -7,15 +7,18 @@
  * @package Strappy
  */
 
-?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class('well'); ?>>
-	<header class="entry-header">
+?><?php
+if(is_sticky()){ ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('panel panel-primary'); ?>>
+<?php } else {?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('panel panel-default'); ?>>
+	<?php } ?>
+	<header class="entry-header panel-heading">
 		<?php
 		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 class="entry-title panel-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="entry-title panel-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
@@ -26,7 +29,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content panel-body">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
@@ -41,7 +44,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer panel-footer">
 		<?php strappy_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

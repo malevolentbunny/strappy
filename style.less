@@ -73,6 +73,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .site-title a {
   color: @link-color;
 }
+h1.site-title{
+  &:extend(.navbar-brand);
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .sticky {
   &:extend(.panel-primary);
   .panel-heading a {
@@ -133,10 +139,19 @@ td {
 }
 .alignleft{
   &:extend(.pull-left);
+  &:after{
+    clear:both;
+  }
 }
 .alignright{
   &:extend(.pull-right);
+  &:after{
+    clear:both;
+  }
 }
 .aligncenter{
   &:extend(.center-block);
+  &:after{
+    clear:both;
+  }
 }

@@ -102,8 +102,15 @@ figure {
 }
 table{
   &:extend(.table);
-  &:extend(.table-bordered);
-  &:extend(.table-hover);
+}
+th{
+  border: solid 2px @table-border-color;
+  text-align: center;
+  padding: 3px;
+}
+td {
+  border: solid 2px @table-border-color;
+  padding: 3px;
 }
 .widget {
   &:extend(.well);
@@ -112,7 +119,6 @@ table{
   }
 }
 .nav-previous, .nav-next {
-
     &:extend(.btn);
     &:extend(.btn-default);
   }
